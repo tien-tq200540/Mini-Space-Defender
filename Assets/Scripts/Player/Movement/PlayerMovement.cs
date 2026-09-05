@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement : TienMonoBehaviour
@@ -12,7 +10,7 @@ public class PlayerMovement : TienMonoBehaviour
     protected override void LoadComponents()
     {
         inputActions = new PlayerActions();
-        _rigidbody2D = GetComponentInParent<Rigidbody2D>();
+        LoadRigidbody2D();   
     }
 
     private void OnEnable()
@@ -36,5 +34,12 @@ public class PlayerMovement : TienMonoBehaviour
     private void OnDisable()
     {
         inputActions.Disable();
+    }
+
+    private void LoadRigidbody2D()
+    {
+        if (_rigidbody2D != null) return;
+        _rigidbody2D = GetComponentInParent<Rigidbody2D>();
+        _rigidbody2D.gravityScale = 0f;
     }
 }
