@@ -6,7 +6,6 @@ public class PlayerShooting : TienMonoBehaviour
 {
     [SerializeField] protected float timeElapsed = 0f;
     [SerializeField] protected float timeLimit = 0.5f;
-    [SerializeField] protected bool canShoot = false;
     private PlayerActions inputActions;
 
     protected override void LoadComponents()

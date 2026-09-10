@@ -9,6 +9,7 @@ public class DespawnByTime : Despawner
     protected override bool CanDespawn()
     {
         Invoke(nameof(this.DespawnObject), timeToDespawn);
+        Debug.Log("InvokeCall");
         return true;
     }
 
@@ -19,6 +20,15 @@ public class DespawnByTime : Despawner
 
     protected override void LoadComponents()
     {
+    }
+
+    private void OnEnable()
+    {
         CanDespawn();
+    }
+
+    private void OnDisable()
+    {
+        CancelInvoke(nameof(this.DespawnObject));
     }
 }
