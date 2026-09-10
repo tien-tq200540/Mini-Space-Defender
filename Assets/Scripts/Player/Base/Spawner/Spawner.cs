@@ -13,10 +13,10 @@ public class Spawner : TienMonoBehaviour
         LoadHolder();
     }
 
-    protected virtual Transform Spawn(string prefabName, Vector2 position)
+    protected virtual Transform Spawn(string prefabName, Vector2 position, Quaternion rotation)
     {
         Transform prefab = GetPrefabByName(prefabName);
-        if (prefab != null) return Spawn(prefab, position);
+        if (prefab != null) return Spawn(prefab, position, rotation);
         return null;
     }
 
@@ -29,16 +29,16 @@ public class Spawner : TienMonoBehaviour
         return null;
     }
 
-    protected virtual Transform Spawn(Transform prefab, Vector2 position)
+    protected virtual Transform Spawn(Transform prefab, Vector2 position, Quaternion rotation)
     {
         Transform spawnObj = GetObjFromPool(prefab);
         if (spawnObj == null)
         {
-            spawnObj = Instantiate(prefab, position, Quaternion.identity);
+            spawnObj = Instantiate(prefab, position, rotation);
             spawnObj.name = prefab.name;
             spawnObj.SetParent(holder);
-            spawnObj.gameObject.SetActive(true);
         }
+        spawnObj.gameObject.SetActive(true);
         return spawnObj;
     }
 

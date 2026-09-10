@@ -11,4 +11,9 @@ public class BulletSpawner : Spawner
         instance = this;
         base.Awake();
     }
+
+    public virtual void SpawnPlayerBullet(Vector2 position, Quaternion rotation)
+    {
+        this.Spawn(prefabs[0], position, rotation);
+    }
 }

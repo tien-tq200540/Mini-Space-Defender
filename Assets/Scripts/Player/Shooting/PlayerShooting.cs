@@ -2,17 +2,38 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerShooting : MonoBehaviour
+public class PlayerShooting : TienMonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] protected float timeElapsed = 0f;
+    [SerializeField] protected float timeLimit = 0.5f;
+    [SerializeField] protected bool canShoot = false;
+    private PlayerActions inputActions;
+
+    protected override void LoadComponents()
     {
-        
+        inputActions = new PlayerActions();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnEnable()
     {
-        
+        inputActions.Enable();
+    }
+
+    private void Update()
+    {
+        timeElapsed += Time.deltaTime;
+
+        if (timeElapsed < timeLimit) return;
+
+        if (inputActions.Shoot.Shooting.IsPressed())
+        {
+            BulletSpawner.Instance.SpawnPlayerBullet(transform.position, transform.parent.rotation);
+            timeElapsed = 0f;
+        }
+    }
+
+    private void OnDisable()
+    {
+        inputActions.Disable();
     }
 }
