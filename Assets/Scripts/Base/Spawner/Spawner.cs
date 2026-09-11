@@ -34,10 +34,11 @@ public class Spawner : TienMonoBehaviour
         Transform spawnObj = GetObjFromPool(prefab);
         if (spawnObj == null)
         {
-            spawnObj = Instantiate(prefab, position, rotation);
+            spawnObj = Instantiate(prefab);
             spawnObj.name = prefab.name;
             spawnObj.SetParent(holder);
         }
+        spawnObj.SetPositionAndRotation(position, rotation);
         spawnObj.gameObject.SetActive(true);
         return spawnObj;
     }
