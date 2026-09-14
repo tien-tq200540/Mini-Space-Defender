@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DamageReceiver : TienMonoBehaviour
+public abstract class DamageReceiver : TienMonoBehaviour
 {
     [SerializeField] protected int curHP;
     [SerializeField] protected int maxHP = 100;
@@ -26,10 +26,7 @@ public class DamageReceiver : TienMonoBehaviour
         }
     }
 
-    protected virtual void Death()
-    {
-        throw new NotImplementedException();
-    }
+    protected abstract void Death();
 
     protected virtual void SetCurHPAtStart() => curHP = maxHP;
 }

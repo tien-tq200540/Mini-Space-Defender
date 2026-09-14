@@ -1,5 +1,8 @@
 public abstract class Despawner : TienMonoBehaviour
 {
     protected abstract bool CanDespawn();
-    protected abstract void DespawnObject();
+    public virtual void DespawnObject()
+    {
+        Destroy(gameObject);
+    }
 }

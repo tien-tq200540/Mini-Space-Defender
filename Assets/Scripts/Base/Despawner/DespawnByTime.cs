@@ -12,11 +12,6 @@ public class DespawnByTime : Despawner
         return true;
     }
 
-    protected override void DespawnObject()
-    {
-        BulletSpawner.Instance.Despawn(transform.parent);
-    }
-
     protected override void LoadComponents()
     {
     }
