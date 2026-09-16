@@ -26,7 +26,7 @@ public class PlayerShooting : TienMonoBehaviour
 
         if (inputActions.Shoot.Shooting.IsPressed())
         {
-            BulletSpawner.Instance.SpawnPlayerBullet(transform.position, transform.parent.rotation);
+            PlayerBulletSpawner.Instance.SpawnPlayerBullet(transform.position, transform.parent.rotation);
             timeElapsed = 0f;
         }
     }

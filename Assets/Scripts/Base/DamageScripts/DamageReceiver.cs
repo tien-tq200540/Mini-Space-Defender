@@ -6,7 +6,7 @@ using UnityEngine;
 public abstract class DamageReceiver : TienMonoBehaviour
 {
     [SerializeField] protected int curHP;
-    [SerializeField] protected int maxHP = 100;
+    [SerializeField] protected int maxHP;
 
     protected override void LoadComponents()
     {

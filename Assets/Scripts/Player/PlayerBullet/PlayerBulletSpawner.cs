@@ -1,9 +1,9 @@
 using UnityEngine;
 
-public class BulletSpawner : Spawner
+public class PlayerBulletSpawner : Spawner
 {
-    private static BulletSpawner instance;
-    public static BulletSpawner Instance => instance;
+    private static PlayerBulletSpawner instance;
+    public static PlayerBulletSpawner Instance => instance;
 
     protected override void Awake()
     {

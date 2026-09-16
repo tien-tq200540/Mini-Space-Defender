@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 669535082839888442}
-  - component: {fileID: 1282608830276721113}
   - component: {fileID: 5982351475757423046}
   - component: {fileID: 1972740552237984941}
+  - component: {fileID: 1153717459081208608}
   m_Layer: 0
   m_Name: DamageSender
   m_TagString: Untagged
@@ -34,19 +34,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2085187258321163941}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1282608830276721113
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1863747902480138678}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65a2790e0d7dc5a45ab4c47e91e3105d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 10
 --- !u!58 &5982351475757423046
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -109,6 +96,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1153717459081208608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1863747902480138678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dd5f6794ce068147b5673795c972f40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10
+  playerBulletDespawn: {fileID: 3357900293513621121}
 --- !u!1 &3605225271452378368
 GameObject:
   m_ObjectHideFlags: 0
@@ -153,7 +154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5a138d7d5c79c9408857fcc19baa22f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 10
 --- !u!1 &6343908239372545001
 GameObject:
   m_ObjectHideFlags: 0
