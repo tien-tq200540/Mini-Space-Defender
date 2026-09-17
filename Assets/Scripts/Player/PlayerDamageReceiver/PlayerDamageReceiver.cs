@@ -7,5 +7,6 @@ public class PlayerDamageReceiver : DamageReceiver
     protected override void Death()
     {
         transform.parent.gameObject.SetActive(false);
+        UIManager.Instance.GameOver();
     }
 }
